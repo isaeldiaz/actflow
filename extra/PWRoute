@@ -1,0 +1,12 @@
+diff --git a/include/pwroute.h b/include/pwroute.h
+index ee2979c..4a8ddd2 100644
+--- a/include/pwroute.h
++++ b/include/pwroute.h
+@@ -3,6 +3,7 @@
+ 
+ #include <set>
+ #include <phydb/phydb.h> 
++#include <sys/types.h>
+ #include "pwroute_component.h"
+ #include "pin_edge.h"
+ using namespace phydb;

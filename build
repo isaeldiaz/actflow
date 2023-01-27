@@ -26,7 +26,7 @@ cmake_build_bipart() {
 # Apply patches
 #
 echo "Applying patch to Galois library..."
-if [ ! -f patched ]
+if [ ! -f Galois.patched ]
 then
    (cd Galois; 
      patch -p0 < ../extra/Galois;
@@ -34,7 +34,25 @@ then
      patch -p0 < ../extra/Galois3;
      patch -p0 < ../extra/Galois4
    )
-   touch patched
+   touch Galois.patched
+fi
+
+echo "Applying patch to PWRoute library..."
+if [ ! -f PWRoute.patched ]
+then
+   (cd PWRoute; 
+     patch -p0 < ../extra/PWRoute;
+   )
+   touch PWRoute.patched
+fi
+
+echo "Applying patch to dflowmap library..."
+if [ ! -f dflowmap.patched ]
+then
+   (cd dflowmap; 
+     patch -p0 < ../extra/dflowmap;
+   )
+   touch dflowmap.patched
 fi
 
 #
