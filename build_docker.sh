@@ -21,4 +21,5 @@ docker build -t actflow:latest -f ./docker/App.Dockerfile .
 
 #Clean up intermediate containers/images
 docker rm $CONTAINER_HASH
-docker image rm actflow_build:latest
+docker image rm --force actflow_build:latest
+docker image rm --force actflow_base:latest
